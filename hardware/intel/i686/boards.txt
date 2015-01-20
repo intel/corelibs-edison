@@ -1,0 +1,25 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+menu.cpu=Processor
+
+##############################################################
+
+izmir_ec.name=Intel® Edison
+izmir_ec.upload.tool=izmirdl
+izmir_ec.upload.protocol=sam-ba
+izmir_ec.upload.maximum_size=10000000
+izmir_ec.upload.use_1200bps_touch=false
+izmir_ec.upload.wait_for_upload_port=false
+izmir_ec.upload.native_usb=false
+
+izmir_ec.build.mcu=i686
+izmir_ec.build.f_cpu=-m32
+izmir_ec.build.core=arduino
+izmir_ec.build.variant=edison_fab_c
+#izmir_ec.build.variant_system_lib=libx86_izmir_gcc_rel.a
+izmir_ec.build.toolchain_path=x86_64-pokysdk-linux-eglibc/usr/bin/i586-poky-linux
+izmir_ec.build.sysroot_path=i586-poky-linux-eglibc
+izmir_ec.build.toolchain_prefix=i586-poky-linux-
+
+
+

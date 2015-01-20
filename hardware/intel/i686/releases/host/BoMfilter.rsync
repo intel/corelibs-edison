@@ -1,0 +1,18 @@
+# Basically everything except /bootloaders/ (= target code)
+
++ /cores/**
++ /firmwares/**
++ /ide-helper/**
++ /libraries/**
++ /tools/**
++ /variants/**
++ /platform.linux.txt
++ /platform.linux64.txt
++ /platform.osx.txt
++ /platform.win.txt
++ /programmers.txt
++ /Readme.txt
++ /boards.txt
+
++ */
+- *
