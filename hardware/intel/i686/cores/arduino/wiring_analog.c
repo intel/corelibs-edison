@@ -204,9 +204,9 @@ void analogWrite(uint32_t ulPin, uint32_t ulValue)
 		}
 		pin2alternate(&p);
 		
-		p->iHandle = sysfsGpioUnexport(p->ulGPIOId, p->sPath, sizeof(p->sPath));
+		//p->iHandle = sysfsGpioUnexport(p->ulGPIOId, p->sPath, sizeof(p->sPath));
 		digitalWrite(ulPin, 0);	//workaround since for tangier SoC bug when setting duty cycle to 0%
-		p->iHandle = sysfsGpioExport(p->ulGPIOId, p->sPath, sizeof(p->sPath));
+		//p->iHandle = sysfsGpioExport(p->ulGPIOId, p->sPath, sizeof(p->sPath));
 	}
 
 	
