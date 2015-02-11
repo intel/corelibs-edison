@@ -203,10 +203,16 @@ void analogWrite(uint32_t ulPin, uint32_t ulValue)
 			return;
 		}
 		pin2alternate(&p);
+		int pwmGpio = p->ulGPIOId;
+		char cmd[40];
 		
-		//p->iHandle = sysfsGpioUnexport(p->ulGPIOId, p->sPath, sizeof(p->sPath));
-		digitalWrite(ulPin, 0);	//workaround since for tangier SoC bug when setting duty cycle to 0%
-		//p->iHandle = sysfsGpioExport(p->ulGPIOId, p->sPath, sizeof(p->sPath));
+		memset(cmd, '\0', sizeof(cmd));
+		sprintf(cmd, "echo %d %s", pwmGpio, "> /sys/class/gpio/unexport");
+		system(cmd);
+		digitalWrite(ulPin, 0);	//workaround for tangier SoC bug when setting duty cycle to 0%
+		memset(cmd, '\0', sizeof(cmd));
+		sprintf(cmd, "echo %d %s", pwmGpio, "> /sys/class/gpio/export");
+		system(cmd);
 	}
 
 	
