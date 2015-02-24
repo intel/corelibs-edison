@@ -1,3 +1,29 @@
+/*
+  Copyright (c) 2011 Arduino.  All right reserved.
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the GNU Lesser General Public
+  License as published by the Free Software Foundation; either
+  version 2.1 of the License, or (at your option) any later version.
+
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  See the GNU Lesser General Public License for more details.
+
+  You should have received a copy of the GNU Lesser General Public
+  License along with this library; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+ Modified by Dan O'Donovan on 29 April 2014: 
+    - Reworked pin mux control logic to include buffer and pull-up control
+    - Added Fab-E GPIO and PWM pin mapping and variant-specific #defines
+    - Modified PWM code to support Galileo Gen2
+    - Modified EEPROM examples to reflect Galileo Gen2 EEPROM size
+    - Added Software Serial class for Galileo Gen2
+    - Includes support for using system console as a TTY
+*/
+
 #ifndef _WIRING_DIGITAL_
 #define _WIRING_DIGITAL_
 
