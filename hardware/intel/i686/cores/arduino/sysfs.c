@@ -206,7 +206,7 @@ static int find_iio_dev_name(char *iio_dev_name, size_t iio_dev_name_len)
 			adc_dev_name[sizeof(LINUX_ADC_DEVICE_NAME)] = '\0';
 
 			if (!strncmp(adc_dev_name, LINUX_ADC_DEVICE_NAME,
-					sizeof(LINUX_ADC_DEVICE_NAME)))
+					(size_t)strlen(LINUX_ADC_DEVICE_NAME)))
 				break;
 		}
 		else {
