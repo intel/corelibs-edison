@@ -121,6 +121,9 @@ void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, int val, uint
 
 unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout = 1000000);
 
+void softAnalogWrite(uint32_t pin, uint32_t duty, uint32_t freq);
+void softAnalogWrite(uint32_t pin, uint32_t duty);
+
 // due to String class is not scoped using namespace, in order to make the
 // compilation works with minimum impact the operator is being added on this
 // file in order to keep this operator visible to the sketch context.
