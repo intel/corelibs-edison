@@ -5,11 +5,11 @@
 name=Arduino i686 Boards
 # compiler.path TBD
 compiler.pre_install.cmd.linux=tools/i686/install_script.sh
-compiler.toolchain.path={runtime.ide.path}/hardware/tools/i686
-compiler.path={compiler.toolchain.path}/pokysdk/usr/bin/i586-poky-linux/
-compiler.path.linux={compiler.toolchain.path}/sysroots/pokysdk/usr/bin/i586-poky-linux/
-compiler.sysroot={compiler.toolchain.path}/core2-32-poky-linux
-compiler.sysroot.linux={compiler.toolchain.path}/sysroots/core2-32-poky-linux
+compiler.toolchain.path={runtime.tools.core2-32-poky-linux-1.6.1.path}/
+compiler.path={runtime.tools.core2-32-poky-linux-1.6.1.path}/pokysdk/usr/bin/i586-poky-linux/
+compiler.path.linux={runtime.tools.core2-32-poky-linux-1.6.1.path}/sysroots/pokysdk/usr/bin/i586-poky-linux/
+compiler.sysroot={runtime.tools.core2-32-poky-linux-1.6.1.path}/core2-32-poky-linux
+compiler.sysroot.linux={runtime.tools.core2-32-poky-linux-1.6.1.path}/sysroots/core2-32-poky-linux
 compiler.prefix=i586-poky-linux
 compiler.c.cmd={compiler.prefix}-gcc
 compiler.c.flags= -m32 -march=i586 "--sysroot={compiler.sysroot}" -c -g -Os -w -ffunction-sections -fdata-sections -MMD -D__ARDUINO_X86__
@@ -58,17 +58,17 @@ recipe.size.regex=Total\s+([0-9]+).*
 
 # X86 Uploader/Programmers tools
 # -------------------
-tools.izmirdl.cmd.path={runtime.ide.path}/hardware/intel/i686/tools/izmir/clupload_osx.sh
-tools.izmirdl.cmd.path.linux="{runtime.ide.path}/hardware/intel/i686/tools/izmir/clupload_linux.sh"
-tools.izmirdl.cmd.path.windows={runtime.ide.path}/hardware/tools/x86/bin/bash.exe
-tools.izmirdl.cmd.script.windows={runtime.ide.path}/hardware/intel/i686/tools/izmir/clupload_win.sh
-tools.izmirdl.cmd.bin.windows={runtime.ide.path}\hardware\tools\x86\bin
+tools.izmirdl.cmd.path={runtime.tools.sketchUploader-1.0.0.path}/clupload/clupload_osx.sh
+tools.izmirdl.cmd.path.linux="{runtime.tools.sketchUploader-1.0.0.path}/clupload/clupload_linux.sh"
+tools.izmirdl.cmd.path.windows={runtime.tools.sketchUploader-1.0.0.path}/x86/bin/bash.exe
+tools.izmirdl.cmd.script.windows={runtime.tools.sketchUploader-1.0.0.path}/clupload/cluploadGalileo_win.sh
+tools.izmirdl.cmd.bin.windows={runtime.tools.sketchUploader-1.0.0.path}/x86/bin
 
 
 tools.izmirdl.upload.params.verbose=-vvvvvv
 tools.izmirdl.upload.params.quiet=-q
 
-tools.izmirdl.upload.pattern=/bin/bash --verbose --noprofile "{cmd.path}" "{runtime.ide.path}/hardware/tools/x86/bin" {build.path}/{build.project_name}.elf {serial.port}
-tools.izmirdl.upload.pattern.linux=/bin/bash --verbose  --noprofile {cmd.path} "{runtime.ide.path}/hardware/tools" {build.path}/{build.project_name}.elf {serial.port}
+tools.izmirdl.upload.pattern=/bin/bash --verbose --noprofile "{cmd.path}" "{runtime.tools.sketchUploader-1.0.0.path}/x86/bin" {build.path}/{build.project_name}.elf {serial.port}
+tools.izmirdl.upload.pattern.linux=/bin/bash --verbose  --noprofile {cmd.path} "{runtime.tools.sketchUploader-1.0.0.path}/x86/bin" {build.path}/{build.project_name}.elf {serial.port}
 tools.izmirdl.upload.elf.windows={build.path}/{build.project_name}.elf
 tools.izmirdl.upload.pattern.windows="{cmd.path}" "--verbose" "--noprofile" "{cmd.script}" "{cmd.bin}" "{upload.elf}" "{serial.port}"
