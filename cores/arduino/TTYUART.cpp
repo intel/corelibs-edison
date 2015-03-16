@@ -110,6 +110,8 @@ int TTYUARTClass::_detach_console( void )
 		 ttydev);
 	system(cmd);
 
+	system("systemctl stop serial-getty@ttyMFD2.service");
+
 	return 0;
 }
 
@@ -121,6 +123,7 @@ int TTYUARTClass::_reattach_console( void )
 	// Restore the original inittab and kick-start getty on the TTY
 	system("/bin/mv -f /etc/inittab.restore /etc/inittab");
 	system("/sbin/telinit q");
+	system("systemctl start serial-getty@ttyMFD2.service");
 
 	return 0;
 }
