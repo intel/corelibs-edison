@@ -6,10 +6,12 @@ name=Arduino i686 Boards
 # compiler.path TBD
 compiler.pre_install.cmd.linux=tools/i686/install_script.sh
 compiler.toolchain.path={runtime.tools.core2-32-poky-linux-1.6.1.path}/
-compiler.path={runtime.tools.core2-32-poky-linux-1.6.1.path}/pokysdk/usr/bin/i586-poky-linux/
-compiler.path.linux={runtime.tools.core2-32-poky-linux-1.6.1.path}/sysroots/pokysdk/usr/bin/i586-poky-linux/
-compiler.sysroot={runtime.tools.core2-32-poky-linux-1.6.1.path}/core2-32-poky-linux
-compiler.sysroot.linux={runtime.tools.core2-32-poky-linux-1.6.1.path}/sysroots/core2-32-poky-linux
+compiler.path={runtime.tools.core2-32-poky-linux-1.6.1.path}/i686/pokysdk/usr/bin/i586-poky-linux/
+compiler.path.windows={runtime.tools.core2-32-poky-linux-1.6.1.path}/pokysdk/usr/bin/i586-poky-linux/
+compiler.path.linux={runtime.tools.core2-32-poky-linux-1.6.1.path}/i686/sysroots/pokysdk/usr/bin/i586-poky-linux/
+compiler.sysroot={runtime.tools.core2-32-poky-linux-1.6.1.path}/i686/core2-32-poky-linux
+compiler.sysroot.windows={runtime.tools.core2-32-poky-linux-1.6.1.path}/core2-32-poky-linux
+compiler.sysroot.linux={runtime.tools.core2-32-poky-linux-1.6.1.path}/i686/sysroots/core2-32-poky-linux
 compiler.prefix=i586-poky-linux
 compiler.c.cmd={compiler.prefix}-gcc
 compiler.c.flags= -m32 -march=i586 "--sysroot={compiler.sysroot}" -c -g -Os -w -ffunction-sections -fdata-sections -MMD -D__ARDUINO_X86__
