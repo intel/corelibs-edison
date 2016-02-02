@@ -27,5 +27,4 @@ izmir_ec.build.sysroot_path=i586-poky-linux-eglibc
 izmir_ec.build.toolchain_prefix=i586-poky-linux-
 izmir_ec.build=0x8087
 izmir_ec.build=0x0A9E
-
-
+izmir_ec.build.board=EDISON
