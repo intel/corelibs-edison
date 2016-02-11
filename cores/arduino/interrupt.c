@@ -323,6 +323,7 @@ done:
 		sleep(10);
 		exit(ret);
 	}
+    delay(10);
 }
 
 /**
